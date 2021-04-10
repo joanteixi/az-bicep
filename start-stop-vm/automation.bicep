@@ -6,7 +6,7 @@ resource startstop0600 'Microsoft.Automation/automationAccounts/jobSchedules@202
   name: 'aa-control/start-0600'
   properties: {
     schedule: {
-      name: '06d_00_daily'
+      name: '06_00_daily'
     }
     runbook: {
       name: 'start-stop-vm'
