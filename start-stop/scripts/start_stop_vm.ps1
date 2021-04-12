@@ -128,7 +128,7 @@ $runningInstances = ($resourceGroupsContent | Where-Object { $_.("Instance state
 $deallocatedInstances = ($resourceGroupsContent | Where-Object { $_.("Instance state") -eq "Deallocated" -or $_.("Instance state") -eq "Deallocating" })
 
 ## Updating virtual machines power state
-if (($runningInstances) -and ($Action -eq "Stop")) {
+if (($runningInstances) -and ($Action -eq "stop")) {
     Write-Output "--------------------------- Updating ---------------------------"
     Write-Output "Trying to stop virtual machines ..."
 
@@ -161,7 +161,7 @@ if (($runningInstances) -and ($Action -eq "Stop")) {
         throw $_.Exception    
     }
 }
-elseif (($deallocatedInstances) -and ($Action -eq "Start")) {
+elseif (($deallocatedInstances) -and ($Action -eq "start")) {
 
 
     Write-Output "--------------------------- Updating ---------------------------"
