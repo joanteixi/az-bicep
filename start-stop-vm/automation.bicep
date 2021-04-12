@@ -36,12 +36,9 @@ resource daily_6 'Microsoft.Automation/automationAccounts/schedules@2020-01-13-p
 }
 
 resource startstop0600 'Microsoft.Automation/automationAccounts/jobSchedules@2020-01-13-preview' = {
-  name: 'start-0600'
+  name:guid('start-0600_')
   parent: automation
-  dependsOn: [
-    daily_6
-    startstopRunbook
-  ]
+ 
   properties: {
     schedule: {
       name: '${daily_6.name}'
